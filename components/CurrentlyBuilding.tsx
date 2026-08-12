@@ -2,6 +2,11 @@
 
 import { motion } from "framer-motion";
 
+const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/paul-portfolio"
+    : "";
+
 const builds = [
   {
     title: "SupportFlow AI",
@@ -69,7 +74,7 @@ export default function CurrentlyBuilding() {
             whileHover={{ y: -8 }}
           >
             <div className="building-image">
-              <img src={build.image} alt={build.title} />
+              <img src={`${basePath}${build.image}`} alt={build.title} />
 
               <div className="building-status">
                 <span className="building-dot" />

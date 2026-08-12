@@ -2,6 +2,11 @@
 
 import { motion } from "framer-motion";
 
+const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/paul-portfolio"
+    : "";
+
 const projects = [
   {
     number: "01",
@@ -104,7 +109,7 @@ export default function Projects() {
               }}
             >
               <div className="project-media">
-                <img src={project.image} alt={project.title} />
+                <img src={`${basePath}${project.image}`} alt={project.title} />
 
                 <div className="project-overlay">
                   <span>View Project</span>
