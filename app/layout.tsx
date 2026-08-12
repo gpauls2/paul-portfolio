@@ -14,6 +14,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gpaulsportfolio.online"),
+  icons: {
+    icon: [
+      {
+        url: "/icon.png?v=2",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/icon.png?v=2",
+    apple: "/icon.png?v=2",
+  },
 
   title: "Paul Fangot | Web Developer, IT Specialist & Social Media Manager",
 
