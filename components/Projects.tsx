@@ -33,7 +33,7 @@ const projects = [
     description:
       "A modern IT support and ticket management platform designed to organize support requests, conversations and service workflows.",
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    link: "https://github.com/gpauls2/supportflow-ai",
+    link: "https://supportflow-ai-tan.vercel.app",
     image: "/projects/supportflow.png",
     status: "In Progress",
   },
@@ -44,7 +44,7 @@ const projects = [
     description:
       "Selected social media campaigns, branded content and creative digital work.",
     stack: ["Content Strategy", "Canva", "Branding", "Social Media"],
-    link: "https://gpaulsportfolio.online/",
+    link: "https://gpauls2.github.io/myportfolio/",
     image: "/projects/social-media.png",
     status: "Portfolio",
   },
