@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 const skillGroups = [
   {
     title: "Development",
+    subtitle: "Building modern web experiences",
     items: [
       "HTML",
       "CSS",
@@ -12,77 +13,85 @@ const skillGroups = [
       "TypeScript",
       "React",
       "Next.js",
+      "Tailwind CSS",
+      "Bootstrap",
+      "REST APIs",
+      "MySQL",
       "WordPress",
       "Elementor",
-      "Tailwind CSS",
-      "REST APIs",
-      "Bootstrap",
-      "Git",
-      "GitHub",
-      "Version Control",
-      "MySQL",
     ],
   },
+
   {
     title: "IT & Systems",
+    subtitle: "Supporting infrastructure & users",
     items: [
       "IT Support",
-      "Networking",
+      "Technical Support",
       "Troubleshooting",
+      "Networking",
       "Windows",
       "Linux",
       "System Administration",
-      "Google Workspace",
-      "LMS Administration",
-      "VLANs",
-      "Network Security",
+      "Virtual Machines",
       "TCP/IP",
       "DNS",
       "DHCP",
+      "VLANs",
       "Port Security",
+      "Network Security",
       "Network Monitoring",
-      "User Management",
-      "Technical Support",
-      "Virtual Machines",
-      "Cybersecurity",
       "Network Troubleshooting",
+      "Cybersecurity",
+      "User Management",
+      "Google Workspace",
+      "LMS Administration",
       "Moodle",
     ],
   },
+
   {
     title: "Creative",
+    subtitle: "Designing content with purpose",
     items: [
       "Social Media Management",
       "Content Creation",
       "Content Strategy",
       "Branding",
       "Visual Design",
-      "Canva",
+      "Graphic Design",
+      "Creative Direction",
       "Campaign Planning",
       "Social Media Graphics",
-      "Creative Direction",
       "Digital Content",
+      "Canva",
       "Photoshop",
-      "Graphic Design",
       "Video Editing",
     ],
   },
+
   {
     title: "Tools & Platforms",
+    subtitle: "Working across modern toolchains",
     items: [
+      "Supabase",
+      "Vercel",
+      "Resend",
+      "Sentry",
+      "Git",
       "GitHub",
       "VS Code",
       "Hostinger",
       "MoodleCloud",
-      "Monday.com",
-      "Zapier",
       "phpMyAdmin",
       "Wireshark",
       "Nmap",
       "Nessus",
-      "Trello",
-      "Slack",
       "Jira",
+      "Trello",
+      "Monday.com",
+      "Slack",
+      "Zapier",
       "Google Analytics",
     ],
   },
@@ -91,6 +100,10 @@ const skillGroups = [
 export default function Skills() {
   return (
     <section className="skills" id="skills">
+      {/* ========================= */}
+      {/* HEADING */}
+      {/* ========================= */}
+
       <motion.div
         className="skills-heading"
         initial={{ opacity: 0, y: 30 }}
@@ -99,55 +112,133 @@ export default function Skills() {
         transition={{ duration: 0.7 }}
       >
         <div>
-          <span className="section-eyebrow">SKILLS & TOOLS</span>
+          <div className="skills-heading-label">
+            <span className="section-eyebrow">
+              SKILLS & TOOLS
+            </span>
+
+            <motion.span
+              className="skills-heading-line"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.8,
+                delay: 0.15,
+              }}
+            />
+          </div>
 
           <h2>
             Built across
             <br />
-            <span>multiple disciplines.</span>
+
+            <span className="skills-gradient-text">
+              multiple disciplines.
+            </span>
           </h2>
         </div>
 
         <p>
-          A mix of development, infrastructure, platform and creative tools
-          used across real projects and ongoing technical work.
+          A mix of development, infrastructure,
+          platform and creative tools used across
+          real projects and ongoing technical work.
         </p>
       </motion.div>
 
+      {/* ========================= */}
+      {/* SKILL GROUPS */}
+      {/* ========================= */}
+
       <div className="skills-grid">
         {skillGroups.map((group, groupIndex) => (
-          <motion.div
-            className="skill-group"
+          <motion.article
+            className={`skill-group skill-group-${groupIndex + 1}`}
             key={group.title}
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            initial={{
+              opacity: 0,
+              y: 35,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
             transition={{
               duration: 0.6,
               delay: groupIndex * 0.1,
             }}
+            whileHover={{
+              y: -6,
+            }}
           >
-            <span className="skill-group-number">
-              0{groupIndex + 1}
-            </span>
+            <div className="skill-group-glow" />
 
-            <h3>{group.title}</h3>
+            <div className="skill-group-top">
+              <span className="skill-group-number">
+                {String(groupIndex + 1).padStart(2, "0")}
+              </span>
 
-            <div className="skill-list">
-              {group.items.map((item, index) => (
+              <span className="skill-group-dot" />
+            </div>
+
+            <div className="skill-group-heading">
+              <h3>{group.title}</h3>
+
+              <p>{group.subtitle}</p>
+            </div>
+
+            <motion.div
+              className="skill-list"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.025,
+                  },
+                },
+              }}
+            >
+              {group.items.map((item) => (
                 <motion.span
                   key={item}
+                  variants={{
+                    hidden: {
+                      opacity: 0,
+                      y: 8,
+                    },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                    },
+                  }}
                   whileHover={{
                     y: -4,
                     scale: 1.03,
                   }}
-                  transition={{ duration: 0.2 }}
+                  transition={{
+                    duration: 0.2,
+                  }}
                 >
                   {item}
                 </motion.span>
               ))}
+            </motion.div>
+
+            <div className="skill-group-footer">
+              <span>
+                {group.items.length} skills
+              </span>
+
+              <span>↗</span>
             </div>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </section>

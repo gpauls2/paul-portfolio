@@ -17,10 +17,11 @@ const services = [
       "Elementor",
       "HTML / CSS",
     ],
+    accent: "cyan",
   },
   {
     number: "02",
-    icon: "◉",
+    icon: "⌘",
     title: "IT & Systems",
     description:
       "Supporting users, systems and digital infrastructure through practical technical solutions.",
@@ -32,6 +33,7 @@ const services = [
       "Google Workspace",
       "System Administration",
     ],
+    accent: "blue",
   },
   {
     number: "03",
@@ -47,12 +49,17 @@ const services = [
       "Creative Design",
       "Campaigns",
     ],
+    accent: "pink",
   },
 ];
 
 export default function Services() {
   return (
     <section className="services" id="services">
+      {/* ========================= */}
+      {/* HEADING */}
+      {/* ========================= */}
+
       <motion.div
         className="section-heading"
         initial={{ opacity: 0, y: 30 }}
@@ -61,30 +68,61 @@ export default function Services() {
         transition={{ duration: 0.7 }}
       >
         <div>
-          <span className="section-eyebrow">WHAT I DO</span>
+          <div className="services-heading-label">
+            <span className="section-eyebrow">
+              WHAT I DO
+            </span>
+
+            <motion.span
+              className="services-heading-line"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.8,
+                delay: 0.15,
+              }}
+            />
+          </div>
 
           <h2>
             One skill set.
             <br />
-            <span>Three perspectives.</span>
+
+            <span className="services-gradient-text">
+              Three perspectives.
+            </span>
           </h2>
         </div>
 
         <p>
-          I work across development, IT and creative digital work — combining
-          technical thinking with visual communication and practical
-          problem-solving.
+          I work across development, IT and creative digital work —
+          combining technical thinking with visual communication and
+          practical problem-solving.
         </p>
       </motion.div>
+
+      {/* ========================= */}
+      {/* CARDS */}
+      {/* ========================= */}
 
       <div className="services-grid">
         {services.map((service, index) => (
           <motion.article
-            className="service-card"
+            className={`service-card service-card-${service.accent}`}
             key={service.title}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            initial={{
+              opacity: 0,
+              y: 50,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
             transition={{
               duration: 0.65,
               delay: index * 0.12,
@@ -93,10 +131,31 @@ export default function Services() {
               y: -10,
             }}
           >
-            <div className="service-top">
-              <span className="service-number">{service.number}</span>
+            <div className="service-card-glow" />
 
-              <div className="service-icon">{service.icon}</div>
+            <div className="service-top">
+              <span className="service-number">
+                {service.number}
+              </span>
+
+              <motion.div
+                className="service-icon"
+                whileHover={{
+                  rotate: 6,
+                  scale: 1.06,
+                }}
+                transition={{
+                  duration: 0.2,
+                }}
+              >
+                {service.icon}
+              </motion.div>
+            </div>
+
+            <div className="service-mid-orbit">
+              <span />
+              <span />
+              <span />
             </div>
 
             <div className="service-content">
@@ -106,7 +165,18 @@ export default function Services() {
 
               <div className="service-skills">
                 {service.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
+                  <motion.span
+                    key={skill}
+                    whileHover={{
+                      y: -3,
+                      scale: 1.02,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                    }}
+                  >
+                    {skill}
+                  </motion.span>
                 ))}
               </div>
             </div>
