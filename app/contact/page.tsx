@@ -27,13 +27,17 @@ export default function ContactPage() {
         };
 
         try {
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(payload),
-            });
+            const response = await fetch(
+                "https://formspree.io/f/mgvgqaok",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                    body: JSON.stringify(payload),
+                }
+            );
 
             if (!response.ok) {
                 throw new Error("Unable to send message.");
@@ -157,13 +161,15 @@ export default function ContactPage() {
                             rel="noopener noreferrer"
                         >
                             <span>GitHub</span>
-                            <strong>gpauls2 ↗</strong>
+
+                            <strong>
+                                gpauls2 ↗
+                            </strong>
                         </a>
 
-                        <a
-                            href="mailto:gpaulsray2@gmail.com"
-                        >
+                        <a href="mailto:gpaulsray2@gmail.com">
                             <span>Email</span>
+
                             <strong>
                                 Send an email ↗
                             </strong>
@@ -171,7 +177,9 @@ export default function ContactPage() {
                     </div>
                 </motion.div>
 
+                {/* ================================= */}
                 {/* FORM */}
+                {/* ================================= */}
 
                 <motion.form
                     className="portfolio-contact-form"
@@ -199,6 +207,7 @@ export default function ContactPage() {
                                 name="name"
                                 type="text"
                                 placeholder="Your name"
+                                autoComplete="name"
                                 required
                             />
                         </label>
@@ -210,6 +219,7 @@ export default function ContactPage() {
                                 name="email"
                                 type="email"
                                 placeholder="you@example.com"
+                                autoComplete="email"
                                 required
                             />
                         </label>
@@ -269,17 +279,36 @@ export default function ContactPage() {
                         />
                     </label>
 
+                    {/* ================================= */}
+                    {/* HONEYPOT SPAM PROTECTION */}
+                    {/* ================================= */}
+
+                    <input
+                        type="text"
+                        name="_gotcha"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                        style={{ display: "none" }}
+                    />
+
+                    {/* ================================= */}
+                    {/* FORM FOOTER */}
+                    {/* ================================= */}
+
                     <div className="portfolio-contact-form-footer">
-                        <div>
+                        <div aria-live="polite">
                             {status === "success" && (
                                 <p className="portfolio-form-success">
-                                    Message sent successfully.
+                                    Message sent successfully. I&apos;ll
+                                    get back to you soon.
                                 </p>
                             )}
 
                             {status === "error" && (
                                 <p className="portfolio-form-error">
-                                    Unable to send your message.
+                                    Something went wrong. Please try
+                                    again or email me directly.
                                 </p>
                             )}
                         </div>
@@ -294,7 +323,9 @@ export default function ContactPage() {
                                     : "Send Message"}
                             </span>
 
-                            <strong>↗</strong>
+                            <strong>
+                                {status === "sending" ? "..." : "↗"}
+                            </strong>
                         </button>
                     </div>
                 </motion.form>
@@ -306,8 +337,7 @@ export default function ContactPage() {
 
             <footer className="portfolio-contact-footer">
                 <span>
-                    Available for opportunities &
-                    collaborations
+                    Available for opportunities & collaborations
                 </span>
 
                 <Link href="/">
