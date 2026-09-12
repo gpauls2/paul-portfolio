@@ -6233,3 +6233,91 @@ main {
 .projects-view-all-button:hover span {
   transform: translateX(5px);
 }
+.case-design-gallery {
+  display: block;
+}
+
+.case-gallery-intro {
+  max-width: 760px;
+  margin: 2rem 0 4rem auto;
+  color: var(--muted, #9aa4b2);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.8;
+}
+
+.case-gallery-list {
+  display: grid;
+  gap: 4rem;
+}
+
+.case-gallery-project {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.case-gallery-heading {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.case-gallery-heading > span,
+.case-gallery-heading p {
+  color: var(--muted, #8f9aaa);
+}
+
+.case-gallery-heading h3 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.35rem, 2.5vw, 2.2rem);
+}
+
+.case-gallery-heading p {
+  margin: 0;
+}
+
+.case-gallery-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.case-gallery-pair.single {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 980px;
+}
+
+.case-gallery-pair figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.case-gallery-pair figcaption {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #dce5ef;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.case-gallery-pair img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .case-gallery-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .case-gallery-intro {
+    margin-left: 0;
+  }
+}

@@ -235,6 +235,60 @@ export default function CaseStudy({
                 </div>
             </section>
 
+            {project.designGallery && project.designGallery.length > 0 ? (
+                <section className="case-section case-design-gallery">
+                    <SectionHeader
+                        eyebrow="02 · DESIGN PROCESS"
+                        title={
+                            <>
+                                FROM BLUEPRINT
+                                <br />
+                                <span>TO FINAL DESIGN.</span>
+                            </>
+                        }
+                    />
+
+                    <p className="case-gallery-intro">
+                        The blueprint establishes the structure, hierarchy and user journey. The final design applies the visual system, imagery, typography and brand personality.
+                    </p>
+
+                    <div className="case-gallery-list">
+                        {project.designGallery.map((item, index) => (
+                            <motion.article
+                                className="case-gallery-project"
+                                key={item.title}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.08 }}
+                                transition={{ duration: 0.6 }}
+                            >
+                                <div className="case-gallery-heading">
+                                    <span>{String(index + 1).padStart(2, "0")}</span>
+                                    <div>
+                                        <h3>{item.title}</h3>
+                                        <p>{item.type}</p>
+                                    </div>
+                                </div>
+
+                                <div className={`case-gallery-pair ${item.blueprint ? "" : "single"}`}>
+                                    {item.blueprint ? (
+                                        <figure>
+                                            <figcaption>Blueprint · Structure</figcaption>
+                                            <img src={item.blueprint} alt={`${item.title} blueprint structure`} loading="lazy" />
+                                        </figure>
+                                    ) : null}
+
+                                    <figure>
+                                        <figcaption>Final Design · High Fidelity</figcaption>
+                                        <img src={item.design} alt={`${item.title} final interface design`} loading="lazy" />
+                                    </figure>
+                                </div>
+                            </motion.article>
+                        ))}
+                    </div>
+                </section>
+            ) : null}
+
             {/* ========================= */}
             {/* STACK */}
             {/* ========================= */}

@@ -37,6 +37,13 @@ export type CaseStudyProject = {
         detail: string;
     }[];
 
+    designGallery?: {
+        title: string;
+        type: string;
+        blueprint?: string;
+        design: string;
+    }[];
+
     result: string;
 
     accent: "cyan" | "violet" | "blue" | "gold" | "pink";
@@ -584,6 +591,248 @@ export const projects: CaseStudyProject[] = [
             "The collection demonstrates my ability to combine visual communication, branding and digital content production alongside technical web development work.",
 
         accent: "gold",
+    },
+
+    /* ======================================================
+       06 — STRAYVERSE
+    ====================================================== */
+
+    {
+        slug: "strayverse",
+        number: "06",
+        title: "Strayverse",
+        shortTitle: "STRAYVERSE.",
+        category: "Front-End Development · Creative Web Experience",
+        eyebrow: "FEATURED PROJECT · INTERACTIVE UNIVERSE",
+        year: "2026",
+        role: "Creator · UI Designer · Front-End Developer",
+        status: "Live",
+        description:
+            "An immersive original universe combining interactive storytelling, five elemental clans, the Bound and Stray character system, and a growing archive of 100 characters.",
+        intro:
+            "Strayverse transforms an original story world into an explorable digital experience. The interface brings its lore, clan identities, character relationships and expanding roster together in one cinematic destination.",
+        image: "/projects/strayverse.png",
+        stack: [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Responsive Design",
+            "Vercel",
+        ],
+        liveUrl: "https://strayverse.vercel.app/",
+        features: [
+            {
+                number: "01",
+                title: "Interactive Worldbuilding",
+                description:
+                    "Presents the Strayverse mythology and story through a structured, immersive web experience.",
+            },
+            {
+                number: "02",
+                title: "Five-Clan System",
+                description:
+                    "Introduces Aerwyn, Vulkara, Neravia, Terraven and Noctyra through distinct identities and elemental themes.",
+            },
+            {
+                number: "03",
+                title: "Bound Archive",
+                description:
+                    "Organizes a roster of 100 original Bound and Stray pairings into a discoverable character collection.",
+            },
+            {
+                number: "04",
+                title: "Soulbond Concept",
+                description:
+                    "Explains the relationship system connecting human Bounds with their animal Strays and abilities.",
+            },
+            {
+                number: "05",
+                title: "Cinematic Interface",
+                description:
+                    "Uses motion, atmospheric styling and bold composition to give the original universe a distinctive digital identity.",
+            },
+            {
+                number: "06",
+                title: "Responsive Exploration",
+                description:
+                    "Keeps lore, characters and navigation accessible across desktop and mobile screens.",
+            },
+        ],
+        challenges: [
+            {
+                number: "01",
+                title: "Turning lore into navigation",
+                text:
+                    "A large fictional universe needed a clear information structure so new visitors could explore without being overwhelmed.",
+            },
+            {
+                number: "02",
+                title: "Maintaining visual continuity",
+                text:
+                    "Clan identities, character profiles and cinematic sections needed to feel distinct while belonging to one design system.",
+            },
+            {
+                number: "03",
+                title: "Supporting a large roster",
+                text:
+                    "The character experience needed to accommodate 100 entries while remaining discoverable and expandable.",
+            },
+        ],
+        result:
+            "Strayverse became a live creative web experience that demonstrates original product thinking, large-scale content organization, UI design and front-end implementation.",
+        accent: "violet",
+    },
+
+    /* ======================================================
+       07 — UI/UX DESIGN
+    ====================================================== */
+
+    {
+        slug: "ui-ux-design",
+        number: "07",
+        title: "UI/UX Design",
+        shortTitle: "UI/UX DESIGN.",
+        category: "Product Design · Interface Design",
+        eyebrow: "DESIGN COLLECTION · FIGMA",
+        year: "2026",
+        role: "UI/UX Designer",
+        status: "Portfolio",
+        description:
+            "A focused collection of product interfaces created in Figma, covering user flows, wireframes, responsive layouts, reusable components and interactive prototypes.",
+        intro:
+            "This collection highlights the design work behind digital products before development begins: clarifying user needs, organizing information and translating workflows into consistent, usable interfaces.",
+        image: "/projects/ui-ux-design.png",
+        stack: [
+            "Figma",
+            "Wireframing",
+            "Prototyping",
+            "Design Systems",
+            "User Flows",
+            "Responsive Design",
+        ],
+        designGallery: [
+            {
+                title: "POLI ATELIER",
+                type: "Fashion & Editorial",
+                blueprint: "/projects/uiux/poli-atelier-blueprint.png",
+                design: "/projects/uiux/poli-atelier-design.png",
+            },
+            {
+                title: "Poli Dental Studio",
+                type: "Healthcare",
+                blueprint: "/projects/uiux/poli-dental-blueprint.png",
+                design: "/projects/uiux/poli-dental-design.png",
+            },
+            {
+                title: "Poli Fitness",
+                type: "Fitness & Analytics",
+                blueprint: "/projects/uiux/poli-fitness-blueprint.png",
+                design: "/projects/uiux/poli-fitness-design.png",
+            },
+            {
+                title: "Poli Ramen House",
+                type: "Restaurant & Hospitality",
+                blueprint: "/projects/uiux/poli-ramen-blueprint.png",
+                design: "/projects/uiux/poli-ramen-design.png",
+            },
+            {
+                title: "Poli Residences",
+                type: "Real Estate",
+                blueprint: "/projects/uiux/poli-residences-blueprint.png",
+                design: "/projects/uiux/poli-residences-design.png",
+            },
+            {
+                title: "POLILEX",
+                type: "Legal Services",
+                blueprint: "/projects/uiux/polilex-blueprint.png",
+                design: "/projects/uiux/polilex-design.png",
+            },
+            {
+                title: "POLIMOTION",
+                type: "Creative Studio",
+                blueprint: "/projects/uiux/polimotion-blueprint.png",
+                design: "/projects/uiux/polimotion-design.png",
+            },
+            {
+                title: "POLIPAY",
+                type: "Fintech",
+                blueprint: "/projects/uiux/polipay-blueprint.png",
+                design: "/projects/uiux/polipay-design.png",
+            },
+            {
+                title: "POLIVOY",
+                type: "Travel & Booking",
+                blueprint: "/projects/uiux/polivoy-blueprint.png",
+                design: "/projects/uiux/polivoy-design.png",
+            },
+            {
+                title: "FlowPilot AI",
+                type: "AI Operations Dashboard · Final Design",
+                design: "/projects/uiux/flowpilot-design.png",
+            },
+        ],
+        features: [
+            {
+                number: "01",
+                title: "User Flows",
+                description:
+                    "Maps practical paths through key tasks before detailed screens are produced.",
+            },
+            {
+                number: "02",
+                title: "Wireframes",
+                description:
+                    "Explores hierarchy, content structure and interaction patterns at an early stage.",
+            },
+            {
+                number: "03",
+                title: "High-Fidelity UI",
+                description:
+                    "Translates product requirements into polished interfaces with deliberate typography, color and spacing.",
+            },
+            {
+                number: "04",
+                title: "Interactive Prototypes",
+                description:
+                    "Connects screens and states to demonstrate intended journeys and interaction behavior.",
+            },
+            {
+                number: "05",
+                title: "Component Systems",
+                description:
+                    "Builds reusable interface patterns that improve consistency and make iteration faster.",
+            },
+            {
+                number: "06",
+                title: "Responsive Design",
+                description:
+                    "Adapts layouts and priorities across desktop, tablet and mobile experiences.",
+            },
+        ],
+        challenges: [
+            {
+                number: "01",
+                title: "Balancing clarity and personality",
+                text:
+                    "Each concept needed a distinct visual character without weakening usability or hierarchy.",
+            },
+            {
+                number: "02",
+                title: "Designing realistic workflows",
+                text:
+                    "Screens were organized around practical user tasks rather than isolated visual compositions.",
+            },
+            {
+                number: "03",
+                title: "Creating scalable foundations",
+                text:
+                    "Components, patterns and responsive rules needed to support continued iteration and eventual development.",
+            },
+        ],
+        result:
+            "The collection demonstrates an end-to-end UI/UX process—from early structure and interaction planning to polished, development-ready product interfaces.",
+        accent: "cyan",
     },
 ];
 

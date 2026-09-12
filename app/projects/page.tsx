@@ -90,6 +90,28 @@ const projects = [
         image: "/projects/social-media.png",
         status: "Portfolio",
     },
+    {
+        number: "06",
+        title: "Strayverse",
+        category: "Front-End Development · Creative Web Experience",
+        description:
+            "An immersive original universe featuring five elemental clans, interactive storytelling and an archive of 100 Bound and Stray characters.",
+        stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+        href: "/projects/strayverse",
+        image: "/projects/strayverse.png",
+        status: "Live",
+    },
+    {
+        number: "07",
+        title: "UI/UX Design",
+        category: "Product Design · Interface Design",
+        description:
+            "A collection of Figma projects exploring user flows, responsive interfaces, component systems and interactive prototypes.",
+        stack: ["Figma", "Wireframing", "Prototyping", "Design Systems"],
+        href: "/projects/ui-ux-design",
+        image: "/projects/ui-ux-design.png",
+        status: "Portfolio",
+    },
 ];
 
 export default function ProjectsPage() {
@@ -153,7 +175,7 @@ export default function ProjectsPage() {
                         delay: 0.15,
                     }}
                 >
-                    <span>05 PROJECTS</span>
+                    <span>07 PROJECTS</span>
 
                     <p>
                         A collection of full-stack applications,
@@ -173,7 +195,7 @@ export default function ProjectsPage() {
                     const statusClass =
                         project.status === "Completed"
                             ? "completed"
-                            : project.status === "In Progress"
+                            : project.status === "In Progress" || project.status === "Live"
                                 ? "in-progress"
                                 : "portfolio";
 
