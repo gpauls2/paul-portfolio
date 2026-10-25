@@ -4,6 +4,29 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
+    period: "2026 — PRESENT",
+    role: "Web Developer Virtual Assistant",
+    company: "Jasmine Sandler Marketing (JSM) & Warrior Women in Business (WWIB)",
+    location: "Remote · Virtual Assistant",
+    description:
+      "Provide web development support, website maintenance, inbound lead capture, CRM integration and marketing automation services for Jasmine Sandler Marketing and Warrior Women in Business.",
+    highlights: [
+      "Created and updated WordPress lead capture and inquiry forms using Fluent Forms",
+      "Supported inbound lead generation by improving forms used to capture service inquiries and prospective client information",
+      "Managed and configured FluentCRM contact tags, lead segmentation and automation triggers",
+      "Built and maintained Zapier integrations connecting WordPress, FluentCRM and Mailchimp",
+      "Configured Mailchimp welcome emails, confirmation messages, discount offers and follow-up workflows to support lead nurturing",
+      "Supported website updates, form functionality and technical troubleshooting",
+      "Maintained Squarespace forms and supported lead capture integrations with Mailchimp",
+      "Managed marketing automation workflows for JSM and WWIB within a shared WordPress environment",
+    ],
+    technologies: [
+      "WordPress", "Elementor", "Squarespace", "Fluent Forms", "FluentCRM", "Zapier", "Mailchimp",
+      "Web Development", "Marketing Automation", "CRM Integration", "Inbound Lead Generation",
+      "Lead Segmentation", "Lead Nurturing",
+    ],
+  },
+  {
     period: "JAN 2026 — JUL 2026",
     role: "Web Developer & LMS Administrator",
     company: "Community Access & Millennium Training (CAASS)",
@@ -17,16 +40,8 @@ const experiences = [
       "Improved security, usability and accessibility",
       "Translated operational requirements into technical solutions",
     ],
-    technologies: [
-      "WordPress",
-      "Elementor",
-      "Moodle",
-      "HTML",
-      "CSS",
-      "JavaScript",
-    ],
+    technologies: ["WordPress", "Elementor", "Moodle", "HTML", "CSS", "JavaScript"],
   },
-
   {
     period: "JAN 2025 — APR 2026",
     role: "Product Assembly Assistant",
@@ -40,14 +55,8 @@ const experiences = [
       "Supported production operations",
       "Assisted the production team with operational tasks",
     ],
-    technologies: [
-      "Production",
-      "Operations",
-      "Team Collaboration",
-      "Workplace Safety",
-    ],
+    technologies: ["Production", "Operations", "Team Collaboration", "Workplace Safety"],
   },
-
   {
     period: "DEC 2023 — JAN 2025",
     role: "Public Area Cleaner",
@@ -61,14 +70,8 @@ const experiences = [
       "Completed vacuuming, dusting and sanitation tasks",
       "Identified and reported maintenance issues",
     ],
-    technologies: [
-      "Hospitality",
-      "Facility Care",
-      "Workplace Safety",
-      "Team Collaboration",
-    ],
+    technologies: ["Hospitality", "Facility Care", "Workplace Safety", "Team Collaboration"],
   },
-
   {
     period: "JUNE 2022 — JULY 2023",
     role: "Social Media Manager",
@@ -83,15 +86,8 @@ const experiences = [
       "Managed social media platforms",
       "Responded to audience interactions",
     ],
-    technologies: [
-      "Social Media",
-      "Content Creation",
-      "Digital Marketing",
-      "Analytics",
-      "Canva",
-    ],
+    technologies: ["Social Media", "Content Creation", "Digital Marketing", "Analytics", "Canva"],
   },
-
   {
     period: "JUNE 2021 — FEB 2022",
     role: "IT Support",
@@ -107,12 +103,8 @@ const experiences = [
       "Maintained technical documentation and system records",
     ],
     technologies: [
-      "Windows",
-      "Hardware Support",
-      "Software Support",
-      "Networking",
-      "Troubleshooting",
-      "System Maintenance",
+      "Windows", "Hardware Support", "Software Support", "Networking",
+      "Troubleshooting", "System Maintenance",
     ],
   },
 ];
@@ -129,14 +121,12 @@ export default function Experience() {
       >
         <div>
           <span className="section-eyebrow">EXPERIENCE</span>
-
           <h2>
             Where I&apos;ve
             <br />
             <span>put it into practice.</span>
           </h2>
         </div>
-
         <p>
           Professional and project experience across web development,
           technical support, digital systems and creative problem-solving.
@@ -151,41 +141,24 @@ export default function Experience() {
             initial={{ opacity: 0, y: 45 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{
-              duration: 0.65,
-              delay: index * 0.1,
-            }}
+            transition={{ duration: 0.65, delay: index * 0.1 }}
           >
-            <div className="experience-marker">
-              <span />
-            </div>
-
-            <div className="experience-period">
-              {experience.period}
-            </div>
-
+            <div className="experience-marker"><span /></div>
+            <div className="experience-period">{experience.period}</div>
             <div className="experience-main">
               <div className="experience-title-row">
                 <div>
                   <h3>{experience.role}</h3>
-                  <span className="experience-company">
-                    {experience.company}
-                  </span>
+                  <span className="experience-company">{experience.company}</span>
                 </div>
-
-                <span className="experience-type">
-                  {experience.location}
-                </span>
+                <span className="experience-type">{experience.location}</span>
               </div>
-
               <p>{experience.description}</p>
-
               <ul className="experience-highlights">
                 {experience.highlights.map((highlight) => (
                   <li key={highlight}>{highlight}</li>
                 ))}
               </ul>
-
               <div className="experience-tech">
                 {experience.technologies.map((technology) => (
                   <span key={technology}>{technology}</span>

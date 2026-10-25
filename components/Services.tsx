@@ -38,7 +38,7 @@ const services = [
   {
     number: "03",
     icon: "✦",
-    title: "Social Media & Creative",
+    title: "Paul Fangot – Social Media Portfolio",
     description:
       "Creating content, visual experiences and digital strategies that help brands communicate effectively.",
     skills: [

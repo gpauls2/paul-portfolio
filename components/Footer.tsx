@@ -18,7 +18,7 @@ export default function Footer() {
         <p>
           Web Development · IT Systems ·
           <br />
-          Social Media & Creative
+          Paul Fangot – Social Media Portfolio
         </p>
       </div>
 

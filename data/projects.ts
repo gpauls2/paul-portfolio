@@ -44,6 +44,14 @@ export type CaseStudyProject = {
         design: string;
     }[];
 
+    contentGallery?: string[];
+
+    projectGallery?: {
+        image: string;
+        title: string;
+        description: string;
+    }[];
+
     result: string;
 
     accent: "cyan" | "violet" | "blue" | "gold" | "pink";
@@ -493,30 +501,32 @@ export const projects: CaseStudyProject[] = [
     },
 
     /* ======================================================
-       05 — SOCIAL MEDIA & CREATIVE
+       05 — PAUL FANGOT - SOCIAL MEDIA PORTFOLIO
     ====================================================== */
 
     {
         slug: "social-media",
         number: "05",
-        title: "Social Media & Creative",
+        title: "Paul Fangot – Social Media Portfolio",
         shortTitle: "CREATIVE.",
         category: "Content · Branding",
         eyebrow: "CREATIVE PORTFOLIO · DIGITAL MEDIA",
 
         year: "2026",
-        role: "Designer · Content Creator",
+        role: "Web Designer · Developer · Content Creator",
         status: "Portfolio",
 
         description:
-            "A collection of selected social campaigns, branded content and visual digital work.",
+            "A dedicated social media portfolio website I designed and developed to showcase creative campaigns, content production and digital branding.",
 
         intro:
-            "This collection explores the creative side of my work across social content, branding, visual communication and digital campaign design.",
+            "I created this standalone portfolio website to present my social media work, visual content and creative services in a structured, responsive experience.",
 
         image: "/projects/social-media.png",
 
         stack: [
+            "Web Design",
+            "Responsive Design",
             "Canva",
             "Branding",
             "Social Media",
@@ -833,6 +843,171 @@ export const projects: CaseStudyProject[] = [
         result:
             "The collection demonstrates an end-to-end UI/UX process—from early structure and interaction planning to polished, development-ready product interfaces.",
         accent: "cyan",
+    },
+
+    /* 08 — JSM & WWIB — Marketing Automation */
+    {
+        slug: "jsm-wwib",
+        number: "08",
+        title: "JSM & WWIB — Marketing Automation",
+        shortTitle: "JSM & WWIB.",
+        category: "Marketing Automation · CRM Integration",
+        eyebrow: "CLIENT WORK · MARKETING OPERATIONS",
+        year: "2026",
+        role: "Marketing Automation & CRM Support",
+        status: "Ongoing",
+        description:
+            "Lead capture, CRM tagging, cross-platform integrations and automated email workflows supporting Jasmine Sandler Marketing and Warrior Women in Business.",
+        intro:
+            "Supported marketing operations for two related brands by creating and updating lead capture forms, configuring contact segmentation and working on CRM-to-email integrations. JSM forms were managed within the WWIB WordPress installation. My contributions focused on forms and automations, not developing either website.",
+        image: "/projects/jsm-wwib/wwib-website.png",
+        stack: [
+            "WordPress", "Fluent Forms", "FluentCRM", "Zapier", "Mailchimp", "WooCommerce",
+        ],
+        projectGallery: [
+            {
+                image: "/projects/jsm-wwib/wwib-website.png",
+                title: "Warrior Women in Business · Website",
+                description: "The shared WordPress platform where WWIB and JSM lead capture forms and CRM workflows were managed. The website itself was not part of my development work.",
+            },
+            {
+                image: "/projects/jsm-wwib/jsm-website.png",
+                title: "Jasmine Sandler Marketing · Website",
+                description: "JSM's public-facing website, supported through updates to inquiry forms and lead-handling automations. Website design and development were outside my scope.",
+            },
+            {
+                image: "/projects/jsm-wwib/fluent-forms.png",
+                title: "Fluent Forms · Lead Capture",
+                description: "Created and updated inquiry, keynote speaking, and promotional forms for JSM and WWIB within the shared WordPress installation.",
+            },
+            {
+                image: "/projects/jsm-wwib/fluentCRM-automations.png",
+                title: "FluentCRM · Tags & Automations",
+                description: "Configured contact tagging and published automation triggers to organize leads by inquiry type and support follow-up workflows.",
+            },
+            {
+                image: "/projects/jsm-wwib/zapier-automations.png",
+                title: "Zapier · Platform Integrations",
+                description: "Worked on integrations connecting forms and CRM activity to Mailchimp for inquiries, applications, and promotional offers.",
+            },
+            {
+                image: "/projects/jsm-wwib/mailchimp-automations.png",
+                title: "Mailchimp · Email Journeys",
+                description: "Configured welcome, confirmation, discount, and follow-up email automations tailored to different WWIB and JSM lead journeys.",
+            },
+        ],
+        features: [
+            { number: "01", title: "Lead Capture Forms", description: "Created and updated JSM and WWIB inquiry forms using Fluent Forms within the shared WWIB WordPress installation." },
+            { number: "02", title: "CRM & Contact Segmentation", description: "Worked with FluentCRM tags and automation triggers to organize contacts by brand, service and inquiry type." },
+            { number: "03", title: "Zapier Integrations", description: "Worked on cross-platform integrations connecting form and CRM activity to Mailchimp, including inquiry and application workflows." },
+            { number: "04", title: "Mailchimp Email Automations", description: "Configured and maintained welcome messages, confirmation emails, discount messages and follow-up sequences." },
+            { number: "05", title: "Multi-Brand Lead Management", description: "Supported separate JSM and WWIB lead-handling processes within shared WordPress form and CRM infrastructure." },
+            { number: "06", title: "Workflow Testing & Maintenance", description: "Reviewed form configurations, contact tags and automation settings as workflows were prepared and maintained." },
+        ],
+        architecture: [
+            { number: "01", title: "Fluent Forms", detail: "Lead submission" },
+            { number: "02", title: "FluentCRM", detail: "Contact tagging" },
+            { number: "03", title: "Zapier", detail: "Integration workflow" },
+            { number: "04", title: "Mailchimp", detail: "Email follow-up" },
+        ],
+        challenges: [
+            { number: "01", title: "Supporting Two Brands", text: "JSM and WWIB needed distinct forms, lead categories and follow-up messages within a shared WordPress environment." },
+            { number: "02", title: "Cross-Platform Coordination", text: "Connecting Fluent Forms, FluentCRM, Zapier and Mailchimp required consistent fields, tags and workflow triggers." },
+            { number: "03", title: "Audience Segmentation", text: "Different inquiry types required appropriate confirmation, discount and follow-up communication paths." },
+        ],
+        result:
+            "Supported the configuration and maintenance of lead capture and marketing automation across JSM and WWIB. The shared environment includes published FluentCRM automations, Zapier workflows and active Mailchimp journeys; further work remains ongoing.",
+        accent: "cyan",
+    },
+
+    /* 09 — Lazy Loopin — AI Content Creation */
+    {
+        slug: "lazy-loopin",
+        number: "09",
+        title: "Lazy Loopin — AI Content Creation",
+        shortTitle: "LAZY LOOPIN.",
+        category: "AI Content · Short-Form Video",
+        eyebrow: "PERSONAL CREATIVE PROJECT · 2026",
+        year: "2026",
+        role: "AI Content Creator · Video Producer",
+        status: "Ongoing",
+        description: "Original AI-assisted short-form entertainment content created for TikTok and YouTube.",
+        intro: "Lazy Loopin is my personal content project exploring repeatable creative production through concepts, scripts, detailed AI prompts, video generation and social publishing.",
+        image: "/projects/lazy-loopin/lazy-loopin.png",
+        stack: ["ChatGPT", "Google Flow", "Prompt Engineering", "Video Editing", "TikTok", "YouTube"],
+        contentGallery: Array.from({ length: 16 }, (_, index) => `/projects/lazy-loopin/cover${index + 1}.png`),
+        features: [
+            { number: "01", title: "Content Concepts", description: "Develop original short-form concepts and series ideas." },
+            { number: "02", title: "Structured Prompting", description: "Write detailed prompts for scene continuity, characters and camera directions." },
+            { number: "03", title: "AI Video Production", description: "Use AI generation tools as part of a short-form video workflow." },
+            { number: "04", title: "Publishing", description: "Prepare videos and accompanying copy for TikTok and YouTube." },
+        ],
+        challenges: [
+            { number: "01", title: "Visual Consistency", text: "Maintain recognizable characters and scenes across generated clips." },
+            { number: "02", title: "Short-Form Storytelling", text: "Deliver clear stories within brief video formats." },
+        ],
+        result: "An ongoing creative channel showcasing prompt engineering, AI-assisted storytelling and social content production.",
+        accent: "violet",
+    },
+
+    /* 10 — Veronika De Leon — Professional Portfolio */
+    {
+        slug: "veronika-portfolio",
+        number: "10",
+        title: "Veronika De Leon — Professional Portfolio",
+        shortTitle: "VERONIKA.",
+        category: "Web Development · Personal Branding",
+        eyebrow: "CLIENT PORTFOLIO · 2026",
+        year: "2026",
+        role: "Web Designer · Front-End Developer",
+        status: "Live",
+        description: "A professional portfolio website with warm editorial styling and interactive work showcases.",
+        intro: "Designed and developed a responsive professional portfolio for Veronika, emphasizing clear navigation, experience details, selected projects and a polished editorial visual identity.",
+        image: "/projects/veronika-portfolio.png",
+        stack: ["React", "Vite", "CSS", "Responsive Design", "Vercel"],
+        liveUrl: "https://veronikadeleon.vercel.app",
+        features: [
+            { number: "01", title: "Editorial Design", description: "Create a warm cream, charcoal and gold visual system." },
+            { number: "02", title: "Experience Showcase", description: "Present professional roles and expandable experience details." },
+            { number: "03", title: "Project Gallery", description: "Organize selected professional work and supporting media." },
+            { number: "04", title: "Responsive Deployment", description: "Build and deploy a responsive site on Vercel." },
+        ],
+        challenges: [
+            { number: "01", title: "Information Hierarchy", text: "Balance professional detail with clean presentation." },
+            { number: "02", title: "Responsive Layout", text: "Keep complex hero and content sections effective on smaller screens." },
+        ],
+        result: "A deployed professional portfolio combining personal branding, front-end development and interactive content presentation.",
+        accent: "gold",
+    },
+
+    /* 11 — Rommel Fangot Jr. — Personal Portfolio */
+    {
+        slug: "rommel-jr-portfolio",
+        number: "11",
+        title: "Rommel Fangot Jr. — Personal Portfolio",
+        shortTitle: "ROMMEL JR.",
+        category: "Web Development · Personal Branding",
+        eyebrow: "PERSONAL PORTFOLIO · 2026",
+        year: "2026",
+        role: "Web Designer · Front-End Developer",
+        status: "Portfolio",
+        description: "A custom personal portfolio for a fresh graduate, featuring bold typography and a green-accented design.",
+        intro: "Built a responsive React portfolio to present Rommel Jr.’s profile and early-career work with a distinct, energetic visual identity.",
+        image: "/projects/rommel-jr-portfolio.png",
+        stack: ["React", "Vite", "CSS", "Responsive Design"],
+        liveUrl: "https://rommelfangot-portfolio.vercel.app",
+        features: [
+            { number: "01", title: "Personal Branding", description: "Create a cohesive visual presentation for an early-career professional." },
+            { number: "02", title: "Custom Typography", description: "Use bold typography and green accents for a distinctive look." },
+            { number: "03", title: "Responsive Layout", description: "Adapt the website to desktop and mobile screens." },
+            { number: "04", title: "Project Presentation", description: "Organize portfolio content for easy browsing." },
+        ],
+        challenges: [
+            { number: "01", title: "Distinct Identity", text: "Make the site visually memorable while keeping it professional." },
+            { number: "02", title: "Mobile Readability", text: "Maintain clear hierarchy and legibility on smaller devices." },
+        ],
+        result: "A custom React-based portfolio designed to support professional presentation and job applications.",
+        accent: "blue",
     },
 ];
 

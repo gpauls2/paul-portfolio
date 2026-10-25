@@ -12,23 +12,23 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  return (
-    <main>
-      <AnimatedBackground />
+    return (
+        <main>
+            <AnimatedBackground />
 
-      <div className="page-shell">
-        <Navbar />
-        <Hero />
-        <Services />
-        <Projects />
-        <About />
-        <Skills />
-        <Experience />
-        <Education />
-        <CurrentlyBuilding />
-        <Contact />
-        <Footer />
-      </div>
-    </main>
-  );
+            <div className="page-shell">
+                <Navbar />
+                <Hero />
+                <Services />
+                <Projects />
+                <About />
+                <Skills />
+                <Experience />
+                <Education />
+                <CurrentlyBuilding />
+                <Contact />
+                <Footer />
+            </div>
+        </main>
+    );
 }

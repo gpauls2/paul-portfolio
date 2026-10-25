@@ -6233,6 +6233,7 @@ main {
 .projects-view-all-button:hover span {
   transform: translateX(5px);
 }
+
 .case-design-gallery {
   display: block;
 }
@@ -6262,7 +6263,7 @@ main {
   margin-bottom: 1.5rem;
 }
 
-.case-gallery-heading > span,
+.case-gallery-heading>span,
 .case-gallery-heading p {
   color: var(--muted, #8f9aaa);
 }
@@ -6321,3 +6322,35 @@ main {
     margin-left: 0;
   }
 }
+
+/* =========================================
+   SKILLS SECTION — SPACING FIX
+   ========================================= */
+
+.skill-group-heading {
+  margin-bottom: 28px;
+}
+
+.skill-group-heading h3 {
+  margin-bottom: 16px;
+}
+
+.skill-group-heading p {
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+.skill-list {
+  margin-top: 12px;
+}
+
+/* SKILLS — full tag visibility and consistent count footer */
+.skills-grid { align-items: stretch; }
+.skill-group { display: flex; flex-direction: column; height: 100%; min-height: 340px; overflow: hidden; }
+.skill-group-heading { margin-bottom: 28px; }
+.skill-group-heading h3 { margin-bottom: 16px; }
+.skill-group-heading p { line-height: 1.7; }
+.skill-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; flex: 0 0 auto; height: auto; max-height: none; overflow: visible; }
+.skill-list span { display: inline-flex; align-items: center; opacity: 1; visibility: visible; }
+.skill-group-footer { display: flex; align-items: center; gap: 4px; margin-top: auto; padding-top: 36px; position: relative; }
+@media (max-width: 600px) { .skill-group { min-height: 0; } }

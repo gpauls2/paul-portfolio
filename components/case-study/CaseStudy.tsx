@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import type { CaseStudyProject } from "@/data/projects";
+import LazyLoopinGallery from "./LazyLoopinGallery";
 
 type Props = {
     project: CaseStudyProject;
@@ -175,10 +176,28 @@ export default function CaseStudy({
                         </span>
                     </div>
 
-                    <img
-                        src={project.image}
-                        alt={project.title}
-                    />
+                    {project.slug === "jsm-wwib" ? (
+                        <div className="jsm-preview-grid">
+                            <figure className="jsm-preview-item">
+                                <div className="jsm-preview-label">JSM · CLIENT WEBSITE</div>
+                                <img
+                                    src="/projects/jsm-wwib/jsm-website.png"
+                                    alt="Jasmine Sandler Marketing website homepage"
+                                    loading="eager"
+                                />
+                            </figure>
+                            <figure className="jsm-preview-item">
+                                <div className="jsm-preview-label">WWIB · CLIENT WEBSITE</div>
+                                <img
+                                    src="/projects/jsm-wwib/wwib-website.png"
+                                    alt="Warrior Women in Business website homepage"
+                                    loading="eager"
+                                />
+                            </figure>
+                        </div>
+                    ) : (
+                        <img src={project.image} alt={project.title} />
+                    )}
                 </div>
             </motion.section>
 
@@ -234,6 +253,56 @@ export default function CaseStudy({
                     </p>
                 </div>
             </section>
+
+            {project.projectGallery && project.projectGallery.length > 0 && (
+                <section className="case-section jsm-gallery-section">
+                    <SectionHeader
+                        eyebrow="02 · PROJECT DOCUMENTATION"
+                        title={
+                            <>
+                                WORKFLOWS &amp;
+                                <br />
+                                <span>PLATFORM OVERVIEW.</span>
+                            </>
+                        }
+                    />
+                    <p className="jsm-gallery-intro">
+                        A closer look at the client platforms, lead capture forms,
+                        CRM tagging, Zapier integrations, and Mailchimp email workflows.
+                        The website screenshots provide context; my contributions
+                        focused on forms and marketing automation.
+                    </p>
+                    <div className="jsm-gallery-grid">
+                        {project.projectGallery.map((item, index) => (
+                            <motion.figure
+                                className="jsm-gallery-card"
+                                key={item.image}
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.12 }}
+                                transition={{ duration: 0.5, delay: (index % 2) * 0.08 }}
+                            >
+                                <div className="jsm-gallery-image-wrap">
+                                    <img src={item.image} alt={item.title} loading="lazy" />
+                                </div>
+                                <figcaption className="jsm-gallery-caption">
+                                    <span className="jsm-gallery-number">
+                                        {String(index + 1).padStart(2, "0")}
+                                    </span>
+                                    <div>
+                                        <h3>{item.title}</h3>
+                                        <p>{item.description}</p>
+                                    </div>
+                                </figcaption>
+                            </motion.figure>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            {project.contentGallery && project.contentGallery.length > 0 && (
+                <LazyLoopinGallery images={project.contentGallery} />
+            )}
 
             {project.designGallery && project.designGallery.length > 0 ? (
                 <section className="case-section case-design-gallery">
@@ -557,6 +626,110 @@ export default function CaseStudy({
                     </div>
                 </motion.div>
             </section>
+
+
+            <style jsx global>{`
+                .case-preview-window:has(.jsm-preview-grid) { height: auto !important; overflow: hidden; }
+                .case-preview-window .jsm-preview-grid {
+                    display: grid !important;
+                    width: 100%;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 12px;
+                    padding: 14px;
+                    background: #101722;
+                }
+                .case-preview-window .jsm-preview-item {
+                    min-width: 0;
+                    margin: 0;
+                    overflow: hidden;
+                    border: 1px solid rgba(255,255,255,.13);
+                    border-radius: 12px;
+                    background: #17212f;
+                }
+                .case-preview-window .jsm-preview-label {
+                    padding: 12px 14px;
+                    color: #c7d9ec;
+                    font-size: 11px;
+                    font-weight: 700;
+                    letter-spacing: .13em;
+                }
+                .case-preview-window .jsm-preview-item img {
+                    display: block !important;
+                    width: 100% !important;
+                    height: auto !important;
+                    max-height: none !important;
+                    aspect-ratio: 16 / 9;
+                    object-fit: contain !important;
+                    object-position: top !important;
+                    background: #fff;
+                }
+                .jsm-gallery-intro {
+                    max-width: 780px;
+                    margin: 0 0 28px;
+                    color: #a9b9ca;
+                    line-height: 1.8;
+                }
+                .jsm-gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 24px;
+                }
+                .jsm-gallery-card {
+                    min-width: 0;
+                    margin: 0;
+                    overflow: hidden;
+                    border: 1px solid rgba(180, 207, 237, .16);
+                    border-radius: 18px;
+                    background: #111c2a;
+                }
+                .jsm-gallery-image-wrap {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    padding: 14px;
+                    background: #0c1521;
+                }
+                .jsm-gallery-image-wrap img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    max-height: 420px;
+                    object-fit: contain;
+                    object-position: top center;
+                    border-radius: 9px;
+                    background: #fff;
+                }
+                .jsm-gallery-caption {
+                    display: flex;
+                    gap: 15px;
+                    padding: 22px;
+                }
+                .jsm-gallery-number {
+                    flex: none;
+                    color: #5de1f0;
+                    font-size: 13px;
+                    font-weight: 700;
+                }
+                .jsm-gallery-caption h3 {
+                    margin: 0 0 8px;
+                    color: #f6f9ff;
+                    font-size: 18px;
+                    line-height: 1.35;
+                }
+                .jsm-gallery-caption p {
+                    margin: 0;
+                    color: #b5c3d2;
+                    font-size: 14px;
+                    line-height: 1.7;
+                }
+                @media (max-width: 720px) {
+                    .case-preview-window .jsm-preview-grid,
+                    .jsm-gallery-grid {
+                        grid-template-columns: minmax(0, 1fr);
+                    }
+                    .jsm-gallery-caption { padding: 18px; }
+                }
+            `}</style>
 
             {/* ========================= */}
             {/* FOOTER */}

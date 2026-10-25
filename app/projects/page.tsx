@@ -76,7 +76,7 @@ const projects = [
 
     {
         number: "05",
-        title: "Social Media & Creative",
+        title: "Paul Fangot – Social Media Portfolio",
         category: "Content · Branding",
         description:
             "Selected social media campaigns, branded content and creative digital work.",
@@ -111,6 +111,59 @@ const projects = [
         href: "/projects/ui-ux-design",
         image: "/projects/ui-ux-design.png",
         status: "Portfolio",
+    },
+
+    {
+        number: "08",
+        title: "Lazy Loopin",
+        category: "AI Content Creation · Digital Storytelling",
+        description: "An original AI-assisted short-form entertainment project featuring cinematic storytelling, movie and series recommendations, and creative video production.",
+        stack: ["AI Video", "Google Flow", "Prompt Engineering", "CapCut", "TikTok", "YouTube"],
+        href: "/projects/lazy-loopin",
+        image: "/projects/lazy-loopin/lazy-loopin.png",
+        status: "Ongoing",
+    },
+    {
+        number: "09",
+        title: "Veronika Portfolio",
+        category: "Web Development · Personal Branding",
+        description: "A responsive professional portfolio showcasing business operations, marketing, client relations, and student support through an editorial golden-hour design.",
+        stack: ["React", "Responsive Design", "UI/UX", "Vercel"],
+        href: "/projects/veronika-portfolio",
+        image: "/projects/veronika-portfolio.png",
+        status: "Live",
+    },
+    {
+        number: "10",
+        title: "Rommel Jr. Portfolio",
+        category: "Web Development · Creative Portfolio",
+        description: "A bold, responsive journalism and creative media portfolio with a distinctive editorial layout and interactive project showcase.",
+        stack: ["React", "Vite", "Responsive Design", "Vercel"],
+        href: "/projects/rommel-jr-portfolio",
+        image: "/projects/rommel-jr-portfolio.png",
+        status: "Live",
+    },
+    {
+        number: "11",
+        title: "Jasmine Sandler Marketing (JSM)",
+        category: "Lead Capture · CRM & Email Automation",
+        description:
+            "JSM inquiry form updates, lead segmentation and automated email workflows managed through the shared WWIB WordPress environment.",
+        stack: ["Fluent Forms", "FluentCRM", "Zapier", "Mailchimp"],
+        href: "/projects/jsm-wwib",
+        image: "/projects/jsm-wwib/jsm-website.png",
+        status: "Ongoing",
+    },
+    {
+        number: "12",
+        title: "Warrior Women in Business (WWIB)",
+        category: "Marketing Automation · CRM Integration",
+        description:
+            "Lead capture, CRM tagging, Zapier integrations and Mailchimp confirmation and follow-up workflows for WWIB.",
+        stack: ["WordPress", "Fluent Forms", "FluentCRM", "Zapier", "Mailchimp"],
+        href: "/projects/jsm-wwib",
+        image: "/projects/jsm-wwib/wwib-website.png",
+        status: "Ongoing",
     },
 ];
 
@@ -175,7 +228,7 @@ export default function ProjectsPage() {
                         delay: 0.15,
                     }}
                 >
-                    <span>07 PROJECTS</span>
+                    <span>{String(projects.length).padStart(2, "0")} PROJECTS</span>
 
                     <p>
                         A collection of full-stack applications,
@@ -195,7 +248,7 @@ export default function ProjectsPage() {
                     const statusClass =
                         project.status === "Completed"
                             ? "completed"
-                            : project.status === "In Progress" || project.status === "Live"
+                            : project.status === "In Progress" || project.status === "Live" || project.status === "Ongoing"
                                 ? "in-progress"
                                 : "portfolio";
 
