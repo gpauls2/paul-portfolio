@@ -195,6 +195,13 @@ export default function CaseStudy({
                                 />
                             </figure>
                         </div>
+                    ) : project.slug === "lazy-loopin" ? (
+                        <img
+                            src="/projects/lazy-loopin/lazy-loopin.png"
+                            alt="Lazy Loopin website homepage screenshot"
+                            loading="lazy"
+                            className="lazy-loopin-static-preview"
+                        />
                     ) : (
                         <img src={project.image} alt={project.title} />
                     )}
@@ -300,7 +307,7 @@ export default function CaseStudy({
                 </section>
             )}
 
-            {project.contentGallery && project.contentGallery.length > 0 && (
+            {project.slug !== "lazy-loopin" && project.contentGallery && project.contentGallery.length > 0 && (
                 <LazyLoopinGallery images={project.contentGallery} />
             )}
 
@@ -629,6 +636,18 @@ export default function CaseStudy({
 
 
             <style jsx global>{`
+                .case-preview-window:has(.lazy-loopin-static-preview) {
+                    height: auto !important;
+                    overflow: hidden;
+                }
+                .case-preview-window .lazy-loopin-static-preview {
+                    display: block;
+                    width: 100%;
+                    height: auto !important;
+                    max-height: none !important;
+                    object-fit: contain !important;
+                    object-position: top center;
+                }
                 .case-preview-window:has(.jsm-preview-grid) { height: auto !important; overflow: hidden; }
                 .case-preview-window .jsm-preview-grid {
                     display: grid !important;

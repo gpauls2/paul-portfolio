@@ -6354,3 +6354,17 @@ main {
 .skill-list span { display: inline-flex; align-items: center; opacity: 1; visibility: visible; }
 .skill-group-footer { display: flex; align-items: center; gap: 4px; margin-top: auto; padding-top: 36px; position: relative; }
 @media (max-width: 600px) { .skill-group { min-height: 0; } }
+
+/* Lazy Loopin static website screenshot */
+.case-violet .case-preview-window:has(img[src*="lazy-loopin.png"]) {
+    height: auto !important;
+}
+
+.case-violet .case-preview-window img[src*="lazy-loopin.png"] {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: top center;
+}

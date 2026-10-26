@@ -930,10 +930,12 @@ export const projects: CaseStudyProject[] = [
         eyebrow: "PERSONAL CREATIVE PROJECT · 2026",
         year: "2026",
         role: "AI Content Creator · Video Producer",
-        status: "Ongoing",
+        status: "Live · Ongoing",
         description: "Original AI-assisted short-form entertainment content created for TikTok and YouTube.",
         intro: "Lazy Loopin is my personal content project exploring repeatable creative production through concepts, scripts, detailed AI prompts, video generation and social publishing.",
         image: "/projects/lazy-loopin/lazy-loopin.png",
+        liveUrl: "https://lazy-loopin-site.vercel.app/",
+        githubUrl: "https://github.com/gpauls2/lazy-loopin-site",
         stack: ["ChatGPT", "Google Flow", "Prompt Engineering", "Video Editing", "TikTok", "YouTube"],
         contentGallery: Array.from({ length: 16 }, (_, index) => `/projects/lazy-loopin/cover${index + 1}.png`),
         features: [
