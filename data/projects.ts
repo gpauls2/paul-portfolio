@@ -535,7 +535,7 @@ export const projects: CaseStudyProject[] = [
         ],
 
         liveUrl:
-            "https://gpauls2.github.io/myportfolio/",
+            "https://paul-social-portfolio.vercel.app/",
 
         features: [
             {
